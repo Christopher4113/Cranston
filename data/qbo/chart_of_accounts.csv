@@ -1,0 +1,34 @@
+Account #,Account,Type,Detail Type
+1000,Operating Checking,Bank,Checking
+1010,Savings,Bank,Savings
+1100,Accounts Receivable,Accounts receivable (A/R),Accounts Receivable (A/R)
+1150,Vendor Refunds Receivable,Other Current Assets,Other Current Assets
+1200,Prepaid Expenses,Other Current Assets,Prepaid Expenses
+1500,Equipment,Fixed Assets,Machinery & Equipment
+2000,Accounts Payable,Accounts payable (A/P),Accounts Payable (A/P)
+2100,Chase Ink Card,Credit Card,Credit Card
+2200,Accrued Expenses,Other Current Liabilities,Accrued Liabilities
+2300,Sales Tax Payable,Other Current Liabilities,Sales Tax Payable
+3000,Retained Earnings,Equity,Retained Earnings
+3010,Owner Contributions,Equity,Partner Contributions
+3020,Owner Distributions,Equity,Partner Distributions
+4000,POS Sales,Income,Sales of Product Income
+4100,Catering Revenue,Income,Service/Fee Income
+4900,Interest Income,Other Income,Interest Earned
+5000,COGS - Coffee Beans,Cost of Goods Sold,Supplies & Materials - COGS
+5010,COGS - Milk & Dairy,Cost of Goods Sold,Supplies & Materials - COGS
+5020,COGS - Cups & Packaging,Cost of Goods Sold,Supplies & Materials - COGS
+5030,COGS - Bakery,Cost of Goods Sold,Supplies & Materials - COGS
+6000,Rent,Expenses,Rent or Lease of Buildings
+6100,Utilities,Expenses,Utilities
+6110,Internet & Phone,Expenses,Utilities
+6200,Payroll Expense,Expenses,Payroll Expenses
+6300,Insurance,Expenses,Insurance
+6400,Software Subscriptions,Expenses,Office/General Administrative Expenses
+6500,Repairs & Maintenance,Expenses,Repair & Maintenance
+6600,Meals,Expenses,Entertainment Meals
+6700,Bank & Merchant Fees,Expenses,Bank Charges
+6750,Marketing,Expenses,Advertising/Promotional
+6800,Office Supplies,Expenses,Office/General Administrative Expenses
+6900,Miscellaneous,Expenses,Other Miscellaneous Service Cost
+6950,Professional Fees,Expenses,Legal & Professional Fees

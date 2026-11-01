@@ -1,0 +1,251 @@
+{
+  "client": "Harbor & Pine Coffee Co., LLC (fictional)",
+  "period": "2026-09",
+  "plants": [
+    {
+      "id": "P1",
+      "type": "Missing recurring bill",
+      "check": "C1",
+      "account": "6000",
+      "amount": 4200,
+      "txn_ids": [],
+      "description": "September rent ($4,200, Harbor Street Properties) not recorded and not yet paid"
+    },
+    {
+      "id": "P2",
+      "type": "Missing recurring bill",
+      "check": "C1",
+      "account": "6110",
+      "amount": 189,
+      "txn_ids": [],
+      "description": "September Comcast Business internet ($189) not recorded"
+    },
+    {
+      "id": "P3",
+      "type": "Duplicate payment",
+      "check": "C2",
+      "account": "5000",
+      "amount": 1315.4,
+      "txn_ids": [
+        "T0200",
+        "T0201"
+      ],
+      "description": "Invoice BB-2287 ($1,315.40) paid to 'Blue Bottle Supply' and again to 'BlueBottle Supply Co' 7 days later"
+    },
+    {
+      "id": "P4",
+      "type": "Duplicate payment",
+      "check": "C2",
+      "account": "5020",
+      "amount": 684.2,
+      "txn_ids": [
+        "T0326",
+        "T0327"
+      ],
+      "description": "PPC-5531 ($684.20) paid by ACH to 'Pacific Paper & Cup', then charged again on the card as 'Pacific Paper and Cup Co' 6 days later"
+    },
+    {
+      "id": "P5",
+      "type": "Wrong account",
+      "check": "C3",
+      "account": "6800",
+      "amount": 1899,
+      "txn_ids": [
+        "T0354"
+      ],
+      "description": "$1,899 laptop coded to Office Supplies; should be Equipment"
+    },
+    {
+      "id": "P6",
+      "type": "Wrong account",
+      "check": "C3",
+      "account": "6600",
+      "amount": 214.36,
+      "txn_ids": [
+        "T0355"
+      ],
+      "description": "Square processing fees coded to Meals; should be Bank & Merchant Fees"
+    },
+    {
+      "id": "P7",
+      "type": "Wrong account",
+      "check": "C3",
+      "account": "6400",
+      "amount": 22.99,
+      "txn_ids": [
+        "T0356"
+      ],
+      "description": "Owner's personal Netflix charge coded to Software Subscriptions; should be Owner Distributions"
+    },
+    {
+      "id": "P8",
+      "type": "Prepaid expensed at once",
+      "check": "C4",
+      "account": "6300",
+      "amount": 6000,
+      "txn_ids": [
+        "T0357"
+      ],
+      "description": "Annual $6,000 Hiscox policy expensed fully in July instead of $500/month"
+    },
+    {
+      "id": "P9",
+      "type": "Unrecorded accrual",
+      "check": "C5",
+      "account": "6100",
+      "amount": 634.8,
+      "txn_ids": [
+        "T0361"
+      ],
+      "description": "September PG&E usage ($634.80, billed Oct 12) not accrued at Sep 30, although Jul and Aug were"
+    },
+    {
+      "id": "P10",
+      "type": "Unusual swing",
+      "check": "C6",
+      "account": "6500",
+      "amount": 1836,
+      "txn_ids": [
+        "T0345",
+        "T0346",
+        "T0347"
+      ],
+      "description": "Repairs & Maintenance up 340% vs the Jul–Aug average across three September charges with no memo"
+    },
+    {
+      "id": "P11",
+      "type": "Unusual swing",
+      "check": "C6",
+      "account": "5010",
+      "amount": 1400,
+      "txn_ids": [],
+      "description": "Milk COGS down ~56% in September while revenue is flat: three Straus deliveries (Sep 16, 23, 30) never entered"
+    },
+    {
+      "id": "P12",
+      "type": "Manual JE hygiene",
+      "check": "C7",
+      "account": "6900",
+      "amount": 5000,
+      "txn_ids": [
+        "T0358"
+      ],
+      "description": "$5,000 round-dollar journal entry to Miscellaneous with no memo"
+    },
+    {
+      "id": "P13",
+      "type": "Revenue cut-off",
+      "check": "C8",
+      "account": "4100",
+      "amount": 1850,
+      "txn_ids": [
+        "T0340"
+      ],
+      "description": "Catering invoice #1043 for an Oct 2 event dated Sep 30, pulling $1,850 of October revenue into September"
+    },
+    {
+      "id": "P14",
+      "type": "Liability not cleared",
+      "check": "none",
+      "account": "2300",
+      "amount": 3120.55,
+      "txn_ids": [],
+      "description": "Q2 sales tax payable ($3,120.55) still on the books; never remitted. No check in the sample list ages liabilities, so this is expected to be missed."
+    },
+    {
+      "id": "P15",
+      "type": "Odd balance",
+      "check": "C9",
+      "account": "2200",
+      "amount": 750,
+      "txn_ids": [
+        "T0359"
+      ],
+      "description": "Bookkeeping fee coded to Accrued Expenses with no accrual behind it, leaving Accrued Expenses with a debit balance"
+    }
+  ],
+  "decoys": [
+    {
+      "id": "D1",
+      "check": "C2",
+      "description": "Two equal $1,240.00 Blue Bottle payments, 7 days apart, different invoice numbers (BB-2274/BB-2275)",
+      "txn_ids": [
+        "T0100",
+        "T0120"
+      ]
+    },
+    {
+      "id": "D2",
+      "check": "C2",
+      "description": "$450 to 'Bay Area Espresso Tech' and $450 to 'Bay Area Espresso Supply' 9 days apart: similar names, same amount, but two different vendors with different invoice numbers",
+      "txn_ids": [
+        "T0343",
+        "T0344"
+      ]
+    },
+    {
+      "id": "D3",
+      "check": "C3",
+      "description": "Costco charge coded to Office Supplies; Costco legitimately splits between cups/packaging and office supplies",
+      "txn_ids": [
+        "T0227"
+      ]
+    },
+    {
+      "id": "D4",
+      "check": "C3",
+      "description": "$1,650 bulk cups order: over the $1,500 capitalization threshold, but inventory/COGS, not a fixed asset",
+      "txn_ids": [
+        "T0325"
+      ]
+    },
+    {
+      "id": "D5",
+      "check": "C4",
+      "description": "7shifts $2,400 annual renewal recorded to Prepaid and amortized $200/month",
+      "txn_ids": [
+        "T0350"
+      ]
+    },
+    {
+      "id": "D6",
+      "check": "C4",
+      "description": "State Fund $2,048.17: insurer and over $2,000, but memo says monthly premium (not a prepayment)",
+      "txn_ids": [
+        "T0306"
+      ]
+    },
+    {
+      "id": "D7",
+      "check": "C6",
+      "description": "Marketing up $1,200 in September for a fall menu launch, explained in the memo",
+      "txn_ids": [
+        "T0349"
+      ]
+    },
+    {
+      "id": "D8",
+      "check": "C6",
+      "description": "One-time $1,450 espresso machine repair with an explanatory memo",
+      "txn_ids": [
+        "T0348"
+      ]
+    },
+    {
+      "id": "D9",
+      "check": "C7",
+      "description": "$3,000 round-dollar journal entry, but with a memo and to Equipment/Owner Contributions",
+      "txn_ids": [
+        "T0353"
+      ]
+    },
+    {
+      "id": "D10",
+      "check": "C8",
+      "description": "Catering invoice dated Sep 29 for a Sep 29 event: correct period",
+      "txn_ids": [
+        "T0338"
+      ]
+    }
+  ]
+}

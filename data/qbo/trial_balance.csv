@@ -1,0 +1,30 @@
+Account,Debit,Credit
+1000 Operating Checking,93230.71,
+1010 Savings,18006.34,
+1100 Accounts Receivable,2810.00,
+1200 Prepaid Expenses,2000.00,
+1500 Equipment,41000.00,
+2100 Chase Ink Card,,1908.52
+2200 Accrued Expenses,750.00,
+2300 Sales Tax Payable,,3120.55
+3000 Retained Earnings,,96319.45
+3010 Owner Contributions,,3000.00
+4000 POS Sales,,188100.38
+4100 Catering Revenue,,8710.00
+4900 Interest Income,,6.34
+5000 COGS - Coffee Beans,16460.71,
+5010 COGS - Milk & Dairy,6183.22,
+5020 COGS - Cups & Packaging,9099.43,
+5030 COGS - Bakery,11223.10,
+6000 Rent,8400.00,
+6100 Utilities,1619.46,
+6110 Internet & Phone,378.00,
+6200 Payroll Expense,55183.58,
+6300 Insurance,12144.51,
+6400 Software Subscriptions,935.96,
+6500 Repairs & Maintenance,4906.00,
+6600 Meals,780.26,
+6700 Bank & Merchant Fees,6498.92,
+6750 Marketing,1650.00,
+6800 Office Supplies,2905.04,
+6900 Miscellaneous,5000.00,
