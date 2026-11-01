@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "config": "local source 01b7410a4f82",
+  "steps": [
+    {
+      "step": "web /Users/[user]/Documents/Take Homes/Cranston/demo/storyboard.toml",
+      "ok": true,
+      "seconds": 57.9
+    },
+    {
+      "step": "edit /Users/[user]/Documents/Take Homes/Cranston/demo/edit.toml",
+      "ok": true,
+      "seconds": 7.6
+    }
+  ],
+  "ok": true,
+  "unchecked": 22,
+  "flagged": 0,
+  "kept": [],
+  "scan_status": "completed",
+  "review_status": "completed",
+  "errors": [],
+  "inputs": {
+    "config_sha256": "9b8738d9dcc8953d3f13a109129341bcfd24d3d27dd48e0842a0a3f378c34991",
+    "reshoot": "0.3.13",
+    "stories": [
+      {
+        "sha256": "28dd6d4da921618172c09527cbca5765f8998cb8749f9b82586445a68481be91",
+        "kind": "web"
+      }
+    ],
+    "render_state": {
+      "schema_version": 1,
+      "sha256": "a9510a3c5dd0aed1bcd05e9f8d63b85ed1f88b87e895efcf7a4705047ee26634",
+      "files": [
+        {
+          "key": "project",
+          "kind": "project",
+          "path": "reshoot.toml",
+          "sha256": "9b8738d9dcc8953d3f13a109129341bcfd24d3d27dd48e0842a0a3f378c34991"
+        },
+        {
+          "key": "take:0",
+          "kind": "story",
+          "path": "storyboard.toml",
+          "sha256": "28dd6d4da921618172c09527cbca5765f8998cb8749f9b82586445a68481be91"
+        },
+        {
+          "key": "edit",
+          "kind": "edit",
+          "path": "edit.toml",
+          "sha256": "4763c017614b33f764f1f737570d96b0b9f1043ecc9dca48886a62a54963f5e6"
+        }
+      ]
+    },
+    "capture_state": {
+      "schema_version": 1,
+      "sha256": "a9510a3c5dd0aed1bcd05e9f8d63b85ed1f88b87e895efcf7a4705047ee26634",
+      "files": [
+        {
+          "key": "project",
+          "kind": "project",
+          "path": "reshoot.toml",
+          "sha256": "9b8738d9dcc8953d3f13a109129341bcfd24d3d27dd48e0842a0a3f378c34991"
+        },
+        {
+          "key": "take:0",
+          "kind": "story",
+          "path": "storyboard.toml",
+          "sha256": "28dd6d4da921618172c09527cbca5765f8998cb8749f9b82586445a68481be91"
+        },
+        {
+          "key": "edit",
+          "kind": "edit",
+          "path": "edit.toml",
+          "sha256": "4763c017614b33f764f1f737570d96b0b9f1043ecc9dca48886a62a54963f5e6"
+        }
+      ]
+    },
+    "fixtures": [],
+    "recording_config_sha256": "5c82e2dd6886ccdd205ea214cfc0585cb907a73b194c6ac64da7a9de75db886f",
+    "edit_sha256": "4763c017614b33f764f1f737570d96b0b9f1043ecc9dca48886a62a54963f5e6",
+    "tracked_diff_sha256": "4602964f1c4fd7cc191a11ea3ac591db3c1cd65829128158e801cc07324975e2",
+    "commit": "e24e3bb7fbef614a5a0285abac1735b49a095996",
+    "dirty": true,
+    "dirty_index_sha256": "51df26986dbe985ca93b6383a8ff010c353ffb880e7ff009636b22e412989bbe"
+  },
+  "id": "acb137d1ed944683ae67ca0e604d01b0",
+  "exports": {},
+  "mode": "final",
+  "review": "/Users/christopher/Documents/Take Homes/Cranston/demo/takes/runs/acb137d1ed944683ae67ca0e604d01b0/review",
+  "seconds": 76.5,
+  "finished_at": "2026-11-01T23:39:00+00:00",
+  "files": [
+    {
+      "path": "takes/demo.take.json",
+      "sha256": "c9f2634c686b8fde460968da4e231dfed3a97d0792921c3053428797a99fd9bc"
+    },
+    {
+      "path": "takes/demo.evidence/approve.png",
+      "sha256": "92db246822fd57b1f8a868b0e18d6b72dab2abfddd83193a914b73a4594cedf0"
+    },
+    {
+      "path": "takes/demo.evidence/duplicate.png",
+      "sha256": "83177337b91be460f1f61b9f6670fa848097c4f28ebe46c12e777314b4c27cdd"
+    },
+    {
+      "path": "takes/demo.evidence/reconcile.png",
+      "sha256": "d948fec8855a7480883e190baf10bc35adb27a9fcbfd36a5fe637886e5ade56e"
+    },
+    {
+      "path": "takes/demo.evidence/queue.png",
+      "sha256": "f9a0c8cf1b9c2f506039ac768bf76d5d50de134f744ddd515725d3350c2f96a6"
+    },
+    {
+      "path": "takes/demo.evidence/end.png",
+      "sha256": "92db246822fd57b1f8a868b0e18d6b72dab2abfddd83193a914b73a4594cedf0"
+    },
+    {
+      "path": "takes/demo.evidence/open.png",
+      "sha256": "13a6dbfb9f9ba665edf7b4c10844f3330673e9ce9c31b455bf98f18ddd1eb982"
+    }
+  ],
+  "expectations_status": "passed",
+  "expectations_count": 9,
+  "record": true
+}

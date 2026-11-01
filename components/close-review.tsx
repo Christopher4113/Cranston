@@ -134,7 +134,7 @@ export function CloseReview() {
 
       <main className="flex min-w-0 flex-1 flex-col overflow-auto">
         <header className="flex flex-wrap items-center gap-x-3 gap-y-2 border-b bg-background px-4 py-3 sm:px-6">
-          <ol className="flex min-w-0 items-center gap-1 text-sm text-subtle-text">
+          <ol data-testid="breadcrumb" className="flex min-w-0 items-center gap-1 text-sm text-subtle-text">
             <li>Clients</li><ChevronRight className="size-3.5" /><li>Harbor &amp; Pine</li><ChevronRight className="size-3.5" />
             <li className="truncate text-foreground">{monthLabel(data.period)} close</li>
           </ol>
@@ -153,8 +153,8 @@ export function CloseReview() {
               <p className="mt-1 max-w-xl text-sm text-subtle-text">{data.client} (fictional). Every bank and card account reconciles. Close Review reads the ledger for what reconciliation can&apos;t see.</p>
             </div>
             <div className="flex flex-wrap gap-2">
-              <Button variant="outline" onClick={tour} disabled={running || tourStep !== null}>Show me the gap</Button>
-              <Button onClick={() => replay(data)} disabled={running || tourStep !== null}>{phase === "idle" ? "Run close review" : "Run again"} <ArrowRight /></Button>
+              <Button data-testid="show-me-the-gap" variant="outline" onClick={tour} disabled={running || tourStep !== null}>Show me the gap</Button>
+              <Button data-testid="run-close-review" onClick={() => replay(data)} disabled={running || tourStep !== null}>{phase === "idle" ? "Run close review" : "Run again"} <ArrowRight /></Button>
             </div>
           </section>
 
@@ -170,11 +170,11 @@ export function CloseReview() {
               <p className="text-sm text-subtle-text">Bank &amp; card reconciliation</p>
               <div className="mt-2 flex items-center gap-3">
                 <span className="font-serif text-4xl text-heading">{phase === "idle" || phase === "importing" ? "—" : `${reconciled}/${recs.length}`}</span>
-                {reconciled === recs.length && reconciled > 0 && <Badge className="rounded-full bg-mint text-heading"><Check /> Reconciled, {recs.length}/{recs.length} accounts</Badge>}
+                {reconciled === recs.length && reconciled > 0 && <Badge data-testid="reconciled-badge" className="rounded-full bg-mint text-heading"><Check /> Reconciled, {recs.length}/{recs.length} accounts</Badge>}
               </div>
               <ul className="mt-3 space-y-1 text-sm">
                 {recs.map((r, i) => (
-                  <li key={r.account} className="flex items-center gap-2">
+                  <li key={r.account} data-testid={`recon-${r.account}`} data-state={i < reconciled ? "reconciled" : "pending"} className="flex items-center gap-2">
                     <span className={cn("flex size-4 items-center justify-center rounded-full border", i < reconciled && "border-mint bg-mint")}>{i < reconciled && <Check className="size-3" />}</span>
                     <span className="flex-1">{r.name}</span>
                     <span className="tabular-nums text-subtle-text">{i < reconciled ? `${money(r.difference)} diff` : ""}</span>
@@ -187,19 +187,19 @@ export function CloseReview() {
               <div className="mt-2 flex items-center gap-3">
                 <span className="font-serif text-4xl text-heading">{phase === "idle" ? "—" : pending.length}</span>
                 {shown > 0 && (pending.length
-                  ? <Badge className="rounded-full bg-peach text-heading">{pending.length} item{pending.length === 1 ? "" : "s"} need review</Badge>
+                  ? <Badge data-testid="review-badge" className="rounded-full bg-peach text-heading">{pending.length} item{pending.length === 1 ? "" : "s"} need review</Badge>
                   : <Badge className="rounded-full bg-mint text-heading"><Check /> All reviewed</Badge>)}
               </div>
               <dl className="mt-3 grid grid-cols-2 gap-2 text-sm">
                 <div><dt className="text-subtle-text">{monthLabel(data.period).split(" ")[0]} net income</dt><dd className="font-serif text-xl text-heading tabular-nums">{money(data.net_income)}</dd></div>
                 <div><dt className="text-subtle-text">Adjusted net income</dt>
-                  <dd className="font-serif text-xl tabular-nums text-heading">{approved.length ? <>{money(adjusted)} <span className="font-sans text-xs text-subtle-text">({signed(adjusted - data.net_income)})</span></> : "—"}</dd></div>
+                  <dd data-testid="adjusted-net-income" className="font-serif text-xl tabular-nums text-heading">{approved.length ? <>{money(adjusted)} <span className="font-sans text-xs text-subtle-text">({signed(adjusted - data.net_income)})</span></> : "—"}</dd></div>
               </dl>
             </div>
           </section>
 
           {phase === "done" && data.eval && (
-            <p className="rounded-lg border border-stone bg-swiss-tan px-4 py-3 text-sm text-heading">
+            <p data-testid="run-summary" className="rounded-lg border border-stone bg-swiss-tan px-4 py-3 text-sm text-heading">
               Reconciled: ✓. Close Review: <b>{data.eval.planted}</b> planted errors, <b>{data.eval.caught}</b> caught, <b>{data.eval.decoys_flagged}/{data.eval.decoys}</b> decoys flagged, <b>{data.eval.other_false_alarms}</b> other false alarm{data.eval.other_false_alarms === 1 ? "" : "s"}.
             </p>
           )}
@@ -209,7 +209,7 @@ export function CloseReview() {
               <Tabs value={tab} onValueChange={(v) => setTab(String(v))}>
                 <div className="border-b px-3 py-2">
                   <TabsList>
-                    <TabsTrigger value="queue">Needs review ({pending.length})</TabsTrigger>
+                    <TabsTrigger data-testid="tab-queue" value="queue">Needs review ({pending.length})</TabsTrigger>
                     <TabsTrigger value="approved">Approved entries ({approved.length})</TabsTrigger>
                     <TabsTrigger value="rejected" className="hidden sm:inline-flex">Rejected ({rejected.length})</TabsTrigger>
                   </TabsList>
@@ -277,7 +277,7 @@ function Queue({ items, empty, onOpen, decide }: { items: RunFinding[]; empty: s
         {items.map((f) => {
           const I = CHECKS[f.check_id].icon;
           return (
-            <TableRow key={f.id} className="cursor-pointer" onClick={() => onOpen(f.id)}>
+            <TableRow key={f.id} data-testid={`finding-${f.id}`} className="cursor-pointer" onClick={() => onOpen(f.id)}>
               <TableCell className="w-full max-w-0 pl-4 whitespace-normal">
                 <div className="flex items-start gap-2.5">
                   <span className="mt-0.5 hidden size-7 shrink-0 items-center justify-center rounded-md bg-swiss-tan text-heading sm:flex"><I className="size-3.5" /></span>
@@ -323,7 +323,7 @@ function Drawer({ f, tour, decision, accounts, period, decide }: { f: RunFinding
   const I = CHECKS[f.check_id].icon;
   const missing = f.check_id === "C1" || f.check_id === "C5";
   return (
-    <div className="flex flex-col gap-5 p-5">
+    <div data-testid="finding-drawer" className="flex flex-col gap-5 p-5">
       {tour && <p className="rounded-md bg-peach/40 px-3 py-2 text-sm text-heading">{tour}</p>}
       <SheetHeader className="p-0">
         <p className="flex items-center gap-2 text-xs text-subtle-text"><I className="size-3.5" />{f.check_id} · {CHECKS[f.check_id].label} · {Math.round(f.confidence * 100)}% confidence</p>
@@ -341,7 +341,7 @@ function Drawer({ f, tour, decision, accounts, period, decide }: { f: RunFinding
 
       <section>
         <h3 className="mb-1 text-xs font-medium tracking-wide text-subtle-text uppercase">Evidence · cited ledger rows</h3>
-        <div className="rounded-md border">
+        <div data-testid="evidence" className="rounded-md border">
           <Table>
             <TableHeader><TableRow><TableHead>Date</TableHead><TableHead>Txn</TableHead><TableHead>Name / memo</TableHead><TableHead className="text-right">Amount</TableHead></TableRow></TableHeader>
             <TableBody>
@@ -366,14 +366,14 @@ function Drawer({ f, tour, decision, accounts, period, decide }: { f: RunFinding
         {!f.verified ? <p className="text-sm text-subtle-text">No verified entry. Review manually.</p>
           : f.proposed_entry.length ? (
             <>
-              <div className="rounded-md border"><EntryTable f={f} accounts={accounts} /></div>
+              <div data-testid="proposed-entry" className="rounded-md border"><EntryTable f={f} accounts={accounts} /></div>
               <p className="mt-2 text-sm">Effect on {monthLabel(period).split(" ")[0]} net income: <b className="tabular-nums">{signed(f.ni_effect)}</b></p>
             </>
           ) : <p className="text-sm text-subtle-text">No entry until the client answers.</p>}
       </section>
 
       <div className="flex gap-2">
-        <Button onClick={() => decide("approved")} disabled={!f.verified}><Check /> Approve</Button>
+        <Button data-testid="drawer-approve" onClick={() => decide("approved")} disabled={!f.verified}><Check /> Approve</Button>
         <Button variant="outline" onClick={() => decide("rejected")}><X /> Reject</Button>
       </div>
     </div>

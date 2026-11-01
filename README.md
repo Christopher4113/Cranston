@@ -1,12 +1,14 @@
 # Close Review
 
+![Run the close review and approve a fix: every account reconciles, 15 items still need review, approving the duplicate payment moves September net income from $14,323.96 to $15,639.36](docs/demo/demo.gif)
+
+[Watch the MP4](docs/demo/demo-final.mp4)
+
 **A reconciled account doesn't mean the books are right.** Bank reconciliation proves the cash side matches the statement. A close built on reconciliation alone can still miss a rent bill that was never entered, the same invoice paid twice under two vendor names, a laptop coded to office supplies, an annual policy expensed in one month, an unaccrued utility bill, or a swing nobody explained. Every one of those clears the bank or never touches it.
 
 Close Review is a prototype of a review layer on top of the close. It reads a client's QuickBooks-style ledger, runs deterministic review checks, and puts each finding in an approval queue with the exact ledger rows it cites, a plain-English explanation, and a balanced adjusting entry. AI prepares; the reviewer approves. It's a review layer I'd love to build with Cranston.
 
 > Synthetic data only: "Harbor & Pine Coffee Co., LLC" is fictional. The review rules are an **illustrative sample checklist, not accounting advice**.
-
-![Guided tour](docs/tour.gif) <!-- TODO: record with ?record=1 -->
 
 ## Results
 

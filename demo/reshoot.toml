@@ -1,0 +1,21 @@
+schema_version = 1
+
+[app]
+# Replay mode: production build, with LLM keys, DEMO_PASSWORD and DATABASE_URL blanked
+# (Next.js does not override env vars that are already set, even to empty, from .env).
+run = "cd .. && ANTHROPIC_API_KEY= DEMO_PASSWORD= DATABASE_URL= npx next start --port 3100"
+url = "http://127.0.0.1:3100/clients/harbor-pine/close"
+timeout = 60
+
+[[take]]
+web = "storyboard.toml"
+out = "takes/demo.mp4"
+
+[edit]
+file = "edit.toml"
+args = ["takes/demo.mp4"]
+
+[check]
+sources = ["takes/demo-final.mp4", "takes/demo-final-readme.gif"]
+review = "review"
+scan = true

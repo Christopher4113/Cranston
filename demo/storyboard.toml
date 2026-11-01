@@ -1,0 +1,100 @@
+schema_version = 1
+id = "close-review"
+url = "http://127.0.0.1:3100/clients/harbor-pine/close?record=1"
+size = "1280x720@1.5"
+
+[[beat]]
+id = "open"
+purpose = "Show the client and the month being closed"
+caption = "Sept close. Books from QuickBooks."
+hold = 3
+[[beat.expect]]
+type = "visible"
+target = {test_id = "breadcrumb"}
+[[beat.expect]]
+type = "visible"
+target = {test_id = "run-close-review"}
+
+[[beat]]
+id = "reconcile"
+purpose = "Every bank and card account reconciles"
+caption = "Every account reconciles. $0.00 off."
+hold = 3
+[[beat.action]]
+type = "click"
+target = {test_id = "run-close-review"}
+[[beat.action]]
+type = "wait"
+target = {test_id = "reconciled-badge"}
+[[beat.expect]]
+type = "text"
+target = {test_id = "reconciled-badge"}
+contains = "Reconciled, 3/3 accounts"
+[[beat.expect]]
+type = "count"
+target = {css = "[data-testid^='recon-'][data-state='reconciled']"}
+count = 3
+
+[[beat]]
+id = "queue"
+purpose = "Reconciled, but the review queue fills up"
+caption = "Reconciled ✓, but 15 items need review."
+hold = 4
+[[beat.action]]
+type = "wait"
+target = {test_id = "run-summary"}
+[[beat.expect]]
+type = "text"
+target = {test_id = "review-badge"}
+contains = "15 items need review"
+[[beat.expect]]
+type = "text"
+target = {test_id = "tab-queue"}
+contains = "Needs review (15)"
+
+[[beat]]
+id = "duplicate"
+purpose = "One invoice paid twice under two vendor names"
+caption = "Same invoice, paid twice. The bank can't see it."
+hold = 6
+[[beat.action]]
+type = "click"
+target = {test_id = "finding-C2-03"}
+[[beat.action]]
+type = "wait"
+target = {test_id = "proposed-entry"}
+# scroll wheels at the cursor: put it on the drawer (the evidence table is inert) first
+[[beat.action]]
+type = "click"
+target = {test_id = "evidence"}
+[[beat.action]]
+type = "scroll"
+dy = 290
+[[beat.expect]]
+type = "text"
+target = {test_id = "evidence"}
+contains = "BlueBottle Supply Co"
+[[beat.expect]]
+type = "text"
+target = {test_id = "proposed-entry"}
+contains = "Balanced"
+
+[[beat]]
+id = "approve"
+purpose = "Approving the fix changes net income"
+caption = "Approved. Net income $14,323.96 → $15,639.36."
+hold = 5
+[[beat.action]]
+type = "click"
+target = {test_id = "drawer-approve"}
+[[beat.action]]
+type = "scroll"
+dy = -3000
+[[beat.expect]]
+type = "text"
+target = {test_id = "adjusted-net-income"}
+contains = "$15,639.36"
+
+[[beat]]
+id = "end"
+hold = 0.5
