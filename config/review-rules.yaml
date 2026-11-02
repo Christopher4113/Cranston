@@ -1,0 +1,43 @@
+# ILLUSTRATIVE SAMPLE CHECKLIST, not accounting advice.
+# Thresholds are examples a firm would tune to its own review policy.
+period: "2026-09"        # month under review; prior_months before it are the baseline
+prior_months: 2
+accrued_account: "2200"
+prepaid_account: "1200"
+fixed_asset_account: "1500"
+refund_account: "1150"
+
+c1_missing_recurring:    # vendor+account seen every prior month at a similar amount, absent now
+  amount_tolerance: 0.10
+  min_monthly_amount: 100
+
+c2_duplicate_payment:    # similar vendor names AND (same invoice # OR same amount within window)
+  name_similarity: 0.85
+  window_days: 14
+
+c3_wrong_account:
+  usual_min_history: 3   # vendor lines needed before "usual account" means anything
+  usual_share: 0.9
+  capitalization_threshold: 1500
+  capex_candidate_accounts: ["6500", "6800", "6900"]
+  keyword_rules:         # regex over name + memo -> expected account
+    - { pattern: "laptop|macbook|computer|ipad", account: "1500" }
+    - { pattern: "processing fee|merchant fee", account: "6700" }
+    - { pattern: "netflix|hulu|disney\\+|spotify premium", account: "3020" }
+    - { pattern: "bookkeeping|cpa|accounting", account: "6950" }
+
+c4_prepaid:
+  min_amount: 2000
+  term_pattern: "annual|12-month|12 month|yearly|policy"
+  not_term_pattern: "monthly"
+  insurer_vendors: ["Hiscox", "State Fund", "Next Insurance", "The Hartford"]
+  default_term_months: 12
+
+c6_flux:                 # current vs average of prior months, after removing items cited by other checks
+  min_pct: 0.35
+  min_amount: 500
+
+c7_manual_je:            # flag when at least min_signals of: round >= round_min, suspense account, no memo
+  round_min: 1000
+  suspense_accounts: ["6900"]
+  min_signals: 2

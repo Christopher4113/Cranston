@@ -1,0 +1,43 @@
+{
+  "name": "close-review",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "generate": "tsx scripts/generate.ts",
+    "db:push": "drizzle-kit push",
+    "import:sample": "tsx --env-file-if-exists=.env scripts/import-sample.ts",
+    "eval": "tsx --env-file-if-exists=.env scripts/eval.ts",
+    "test": "tsx --test lib/review/checks.test.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.3.0",
+    "@base-ui/react": "^1.9.0",
+    "class-variance-authority": "^0.7.1",
+    "cn": "^0.5.1",
+    "drizzle-orm": "^0.45.4",
+    "lucide-react": "^1.66.0",
+    "next": "16.4.3",
+    "postgres": "^4.0.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "shadcn": "^4.23.0",
+    "tw-animate-css": "^1.4.0",
+    "yaml": "^2.9.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/turbopack": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "drizzle-kit": "^0.31.11",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.3",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.15",
+    "typescript": "^5"
+  }
+}

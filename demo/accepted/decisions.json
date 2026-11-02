@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "run_id": "acb137d1ed944683ae67ca0e604d01b0",
+  "binding": "cba7e0eadf9dab77723952fbf9c1f52ea9ad1a98a32dea1d7cad9d2dbafd2a60",
+  "decisions": {
+    "close-review/approve": "accepted",
+    "close-review/duplicate": "accepted",
+    "close-review/end": "accepted",
+    "close-review/open": "accepted",
+    "close-review/queue": "accepted",
+    "close-review/reconcile": "accepted",
+    "video": "accepted"
+  },
+  "recorded_by": "reshoot accept",
+  "recorded_at": "2026-11-01T23:40:55+00:00"
+}

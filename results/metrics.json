@@ -1,0 +1,217 @@
+{
+  "client": "Harbor & Pine Coffee Co., LLC",
+  "period": "2026-09",
+  "reconciliation_baseline": {
+    "accounts_reconciled": "3/3",
+    "month_ends_reconciled": "9/9",
+    "plants_caught": "0/15"
+  },
+  "close_review": {
+    "plants_caught": "14/15",
+    "decoys_flagged": "0/10",
+    "other_false_alarms": 1,
+    "findings": 15
+  },
+  "per_check": {
+    "C1": "2/2",
+    "C2": "2/2",
+    "C3": "3/3",
+    "C4": "1/1",
+    "C5": "1/1",
+    "C6": "2/2",
+    "C7": "1/1",
+    "C8": "1/1",
+    "C9": "1/1",
+    "none": "0/1"
+  },
+  "explanations": {
+    "verified": "15/15",
+    "entries_balanced": "15/15",
+    "source": [
+      "template"
+    ]
+  },
+  "cost": {
+    "llm_usd": 0,
+    "ms": 34,
+    "transactions": 379
+  },
+  "plants": [
+    {
+      "id": "P1",
+      "type": "Missing recurring bill",
+      "check": "C1",
+      "caught_by": [
+        "C1-01"
+      ]
+    },
+    {
+      "id": "P2",
+      "type": "Missing recurring bill",
+      "check": "C1",
+      "caught_by": [
+        "C1-02"
+      ]
+    },
+    {
+      "id": "P3",
+      "type": "Duplicate payment",
+      "check": "C2",
+      "caught_by": [
+        "C2-03"
+      ]
+    },
+    {
+      "id": "P4",
+      "type": "Duplicate payment",
+      "check": "C2",
+      "caught_by": [
+        "C2-04"
+      ]
+    },
+    {
+      "id": "P5",
+      "type": "Wrong account",
+      "check": "C3",
+      "caught_by": [
+        "C3-05"
+      ]
+    },
+    {
+      "id": "P6",
+      "type": "Wrong account",
+      "check": "C3",
+      "caught_by": [
+        "C3-07"
+      ]
+    },
+    {
+      "id": "P7",
+      "type": "Wrong account",
+      "check": "C3",
+      "caught_by": [
+        "C3-06"
+      ]
+    },
+    {
+      "id": "P8",
+      "type": "Prepaid expensed at once",
+      "check": "C4",
+      "caught_by": [
+        "C4-08"
+      ]
+    },
+    {
+      "id": "P9",
+      "type": "Unrecorded accrual",
+      "check": "C5",
+      "caught_by": [
+        "C5-09"
+      ]
+    },
+    {
+      "id": "P10",
+      "type": "Unusual swing",
+      "check": "C6",
+      "caught_by": [
+        "C6-15"
+      ]
+    },
+    {
+      "id": "P11",
+      "type": "Unusual swing",
+      "check": "C6",
+      "caught_by": [
+        "C6-13"
+      ]
+    },
+    {
+      "id": "P12",
+      "type": "Manual JE hygiene",
+      "check": "C7",
+      "caught_by": [
+        "C7-10"
+      ]
+    },
+    {
+      "id": "P13",
+      "type": "Revenue cut-off",
+      "check": "C8",
+      "caught_by": [
+        "C8-11"
+      ]
+    },
+    {
+      "id": "P14",
+      "type": "Liability not cleared",
+      "check": "none",
+      "caught_by": []
+    },
+    {
+      "id": "P15",
+      "type": "Odd balance",
+      "check": "C9",
+      "caught_by": [
+        "C9-12"
+      ]
+    }
+  ],
+  "decoys": [
+    {
+      "id": "D1",
+      "check": "C2",
+      "flagged_by": []
+    },
+    {
+      "id": "D2",
+      "check": "C2",
+      "flagged_by": []
+    },
+    {
+      "id": "D3",
+      "check": "C3",
+      "flagged_by": []
+    },
+    {
+      "id": "D4",
+      "check": "C3",
+      "flagged_by": []
+    },
+    {
+      "id": "D5",
+      "check": "C4",
+      "flagged_by": []
+    },
+    {
+      "id": "D6",
+      "check": "C4",
+      "flagged_by": []
+    },
+    {
+      "id": "D7",
+      "check": "C6",
+      "flagged_by": []
+    },
+    {
+      "id": "D8",
+      "check": "C6",
+      "flagged_by": []
+    },
+    {
+      "id": "D9",
+      "check": "C7",
+      "flagged_by": []
+    },
+    {
+      "id": "D10",
+      "check": "C8",
+      "flagged_by": []
+    }
+  ],
+  "other_false_alarms": [
+    {
+      "id": "C6-14",
+      "title": "COGS - Cups & Packaging down 36% vs Jul–Aug average, unexplained"
+    }
+  ]
+}
